@@ -1,0 +1,25 @@
+.button {
+	background: null;
+	block-size: null;
+	box-sizing: border-box;
+	line-height: null;
+	padding: null;
+	&:disabled {
+	}
+	&:focus,
+	&:hover {
+	}
+}
+
+.close-button {
+	block-size: null;
+	fill: null;
+	inline-size: null;
+	padding: null;
+	&:focus,
+	&:hover {
+	}
+	svg {
+		pointer-events: none;
+	}
+}

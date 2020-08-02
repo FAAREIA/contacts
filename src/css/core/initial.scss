@@ -1,0 +1,79 @@
+@use "functions" as *;
+@use "mixins" as *;
+@use "variables" as *;
+
+:root {
+	@include declare-custom-property("animdur", $animation-duration);
+	@include declare-custom-property("bdrs", $border-radius);
+	@include declare-custom-property("c", $color-scheme, "light");
+	@include declare-custom-property("ff", $font-family);
+	@include declare-custom-property("fz", $font-size);
+	@include declare-custom-property("gd", $grid, "baseline");
+	@include declare-custom-property("gd", $grid, "column-gap");
+	@include declare-custom-property("gd", $grid, "column-width");
+	@include declare-custom-property("gd", $grid, "row-gap");
+	@include declare-custom-property("z", $z-index);
+	font-size: var(--fz--root);
+}
+
+::selection {
+	background: null;
+	color: null;
+}
+
+a {
+	color: var(--c--link);
+	&:focus,
+	&:hover {
+	}
+}
+
+body {
+	background: #E0E0E0;
+	color: var(--c--text);
+	font: var(--fz--text)/var(--gd--baseline) var(--ff--text);
+}
+
+img {
+	display: block;
+}
+
+#contacts {
+	display: grid;
+	grid-template-areas: "nav connections";
+	grid-template-columns: minmax(32rem, 44rem) minmax(48rem, 1fr);
+	height: 100vh;
+	overflow: hidden;
+}
+
+.grid {
+	display: grid;
+	gap: var(--gd--row-gap) var(--gd--column-gap);
+}
+
+.h2,
+h2 {
+	font-size: var(--fz--h2);
+	line-height: 1;
+}
+
+.h3,
+h3 {
+	font-size: var(--fz--h3);
+	line-height: 1;
+}
+
+.heading,
+dt,
+h1,
+h2,
+h3,
+legend,
+th {
+	color: var(--c--header);
+	font-family: var(--ff--header);
+	font-weight: null;
+	a {
+		color: inherit;
+	}
+}

@@ -1,0 +1,67 @@
+$animation-duration: (
+	"long": null,
+	"median": null,
+	"short": null
+);
+
+$border-radius: (
+	"large": null,
+	"medium": null,
+	"small": null
+);
+
+$color-scheme: (
+	"dark": (),
+	"light": (
+		"red": #C92200,
+		"black": #262626,
+		"tertiary": null,
+
+		"header": #C92200,
+		"link": #C92200,
+		"text": #262626,
+
+		"error": null,
+		"success": null,
+		"warning": null
+	)
+);
+
+$easing-function: ();
+
+$font-family: (
+	"alternative": (null),
+	"header": ("PT Sans", sans-serif),
+	"text": ("PT Sans", sans-serif)
+);
+
+$font-size: (
+	"h1": null,
+	"h2": 4.8rem,
+	"h3": 3.6rem,
+	"root": 62.5%,
+	"small": 1.2rem,
+	"text": 1.6rem
+);
+
+$grid: (
+	"baseline": 2.4rem,
+	"column-gap": 2.4rem,
+	"column-width": null,
+	"columns": (
+		"desktop": null,
+		"mobile": null,
+		"tablet": null
+	),
+	"row-gap": 2.4rem
+);
+
+$z-index: (
+	"content": 300,
+	"dropdown": 400,
+	"sticky": 500,
+	"fixed": 600,
+	"modal": 700,
+	"advertising": 800,
+	"alert": 900
+);

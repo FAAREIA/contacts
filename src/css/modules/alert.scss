@@ -1,0 +1,47 @@
+.alert {
+	background: var(--alert--bg);
+	border: 0;
+	color: var(--alert--c, null);
+	display: none;
+	inline-size: var(--alert--isz, auto);
+	padding: null;
+	position: var(--alert--pos, relative);
+	&.close {
+		animation: null;
+	}
+	&.error {
+		--alert--bg: var(--c--error);
+		--alert--c: null;
+	}
+	&.fixed {
+		--alert--isz: null;
+		--alert--pos: fixed;
+		box-sizing: border-box;
+		left: 50%;
+		max-block-size: calc(100% - var(--gd--column-gap) * 2);
+		max-inline-size: calc(100% - var(--gd--column-gap) * 2);
+		overflow: auto;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		z-index: var(--z--alert);
+	}
+	&.success {
+		--alert--bg: var(--c--success);
+		--alert--c: null;
+	}
+	&.warning {
+		--alert--bg: var(--c--warning);
+		--alert--c: null;
+	}
+	&[open] {
+		display: block;
+	}
+	.close-button {
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+	.heading {
+		color: inherit;
+	}
+}

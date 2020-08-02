@@ -1,0 +1,22 @@
+.form-control {
+	background: var(--form-control--bg, var(--c--black));
+	height: var(--form-control--h, 6rem);
+	border: 0;
+	box-sizing: border-box;
+	color: var(--form-control--c, white);
+	line-height: var(--form-control--lh, 6rem);
+	padding: var(--form-control--p, 0 1.2rem);
+	width: 100%;
+	&:focus,
+	&:focus-within {
+		--form-control_placeholder--c: null;
+		--form-control--bg: var(--c--red);
+	}
+	&::placeholder {
+		color: var(--form-control_placeholder--c, white);
+	}
+}
+
+.form-group {
+	display: flex;
+}

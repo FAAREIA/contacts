@@ -1,0 +1,438 @@
+a {
+  text-decoration: none;
+}
+
+blockquote,
+body,
+dd,
+dialog,
+dl,
+fieldset,
+figure,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+ol,
+p,
+pre,
+textarea,
+ul {
+  margin: 0;
+}
+
+button {
+  background: none;
+}
+
+button,
+fieldset,
+hr,
+iframe {
+  border: 0;
+}
+
+button,
+input,
+select,
+small,
+textarea {
+  font-size: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+button:enabled,
+input[type=reset]:enabled,
+input[type=submit]:enabled {
+  cursor: pointer;
+}
+
+fieldset,
+legend,
+ol,
+ul {
+  padding: 0;
+}
+
+pre {
+  overflow-x: auto;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+:root {
+  --c--red: #C92200;
+  --c--black: #262626;
+  --c--header: #C92200;
+  --c--link: #C92200;
+  --c--text: #262626;
+  --ff--header: "PT Sans", sans-serif;
+  --ff--text: "PT Sans", sans-serif;
+  --fz--h2: 4.8rem;
+  --fz--h3: 3.6rem;
+  --fz--root: 62.5%;
+  --fz--small: 1.2rem;
+  --fz--text: 1.6rem;
+  --gd--baseline: 2.4rem;
+  --gd--column-gap: 2.4rem;
+  --gd--row-gap: 2.4rem;
+  --z--content: 300;
+  --z--dropdown: 400;
+  --z--sticky: 500;
+  --z--fixed: 600;
+  --z--modal: 700;
+  --z--advertising: 800;
+  --z--alert: 900;
+  font-size: var(--fz--root);
+}
+
+a {
+  color: var(--c--link);
+}
+body {
+  background: #E0E0E0;
+  color: var(--c--text);
+  font: var(--fz--text)/var(--gd--baseline) var(--ff--text);
+}
+
+img {
+  display: block;
+}
+
+#contacts {
+  display: grid;
+  grid-template-areas: "nav connections";
+  grid-template-columns: minmax(32rem, 44rem) minmax(48rem, 1fr);
+  height: 100vh;
+  overflow: hidden;
+}
+
+.grid {
+  display: grid;
+  gap: var(--gd--row-gap) var(--gd--column-gap);
+}
+
+.h2,
+h2 {
+  font-size: var(--fz--h2);
+  line-height: 1;
+}
+
+.h3,
+h3 {
+  font-size: var(--fz--h3);
+  line-height: 1;
+}
+
+.heading,
+dt,
+h1,
+h2,
+h3,
+legend,
+th {
+  color: var(--c--header);
+  font-family: var(--ff--header);
+}
+.heading a,
+dt a,
+h1 a,
+h2 a,
+h3 a,
+legend a,
+th a {
+  color: inherit;
+}
+
+.alert {
+  background: var(--alert--bg);
+  border: 0;
+  color: var(--alert--c, );
+  display: none;
+  inline-size: var(--alert--isz, auto);
+  position: var(--alert--pos, relative);
+}
+.alert.error {
+  --alert--bg: var(--c--error);
+  --alert--c: null;
+}
+.alert.fixed {
+  --alert--isz: null;
+  --alert--pos: fixed;
+  box-sizing: border-box;
+  left: 50%;
+  max-block-size: calc(100% - var(--gd--column-gap) * 2);
+  max-inline-size: calc(100% - var(--gd--column-gap) * 2);
+  overflow: auto;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: var(--z--alert);
+}
+.alert.success {
+  --alert--bg: var(--c--success);
+  --alert--c: null;
+}
+.alert.warning {
+  --alert--bg: var(--c--warning);
+  --alert--c: null;
+}
+.alert[open] {
+  display: block;
+}
+.alert .close-button {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.alert .heading {
+  color: inherit;
+}
+
+@keyframes loading {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.button {
+  box-sizing: border-box;
+}
+.close-button svg {
+  pointer-events: none;
+}
+
+[placeholder]::-moz-placeholder {
+  opacity: 1;
+}
+
+[tabindex="-1"] {
+  outline: 0;
+}
+
+.form-control {
+  background: var(--form-control--bg, var(--c--black));
+  height: var(--form-control--h, 6rem);
+  border: 0;
+  box-sizing: border-box;
+  color: var(--form-control--c, white);
+  line-height: var(--form-control--lh, 6rem);
+  padding: var(--form-control--p, 0 1.2rem);
+  width: 100%;
+}
+.form-control:focus, .form-control:focus-within {
+  --form-control_placeholder--c: null;
+  --form-control--bg: var(--c--red);
+}
+.form-control::placeholder {
+  color: var(--form-control_placeholder--c, white);
+}
+
+.form-group {
+  display: flex;
+}
+
+.loading {
+  align-self: center;
+  animation: loading 1.4s linear infinite;
+  background: radial-gradient(var(--loading--bg, #E0E0E0) 1.6rem, transparent 1.6rem), linear-gradient(to right, var(--c--red) 50%, transparent 0), linear-gradient(var(--c--red) 0.2rem, transparent 100%);
+  border-radius: 100%;
+  height: 4.8rem;
+  justify-self: center;
+  line-height: 12rem;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 4.8rem;
+}
+#root > .loading {
+  left: 50%;
+  margin: -2.4rem 0 0 -2.4rem;
+  position: fixed;
+  top: 50%;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+.pagination .next,
+.pagination .prev {
+  padding: 0 0.8rem;
+  width: auto;
+}
+.pagination button {
+  background: var(--c--black);
+  color: white;
+  height: 3.6rem;
+  width: 3.6rem;
+}
+.pagination button.active, .pagination button:focus, .pagination button:hover {
+  background: var(--c--red);
+}
+.pagination button[disabled] {
+  background: #AAAAAA;
+  pointer-events: none;
+}
+
+svg {
+  max-block-size: 100%;
+  max-inline-size: 100%;
+}
+
+.hide {
+  display: none;
+}
+
+#connections {
+  --loading--bg: white;
+  background: white;
+  display: grid;
+  grid-area: connections;
+  overflow-y: auto;
+  padding: 2.4rem;
+}
+#connections:not(.empty) {
+  grid-template-rows: auto 1fr;
+}
+#connections.empty {
+  align-items: center;
+  font-weight: 700;
+  justify-items: center;
+  letter-spacing: 0.24rem;
+  text-transform: uppercase;
+}
+#connections .header {
+  column-gap: 4.8rem;
+  display: grid;
+  grid-template-areas: "user search-form";
+  grid-template-columns: 1fr 24rem;
+  padding-bottom: 4.8rem;
+}
+#connections .connection-list {
+  border-top: 0.2rem dotted #AAAAAA;
+  display: grid;
+  grid-auto-rows: min-content;
+  grid-gap: 7.2rem 2.4rem;
+  grid-template-columns: repeat(auto-fit, 24rem);
+  justify-content: center;
+  padding: 4.8rem 0 2.4rem;
+}
+#connections .connection-list .image {
+  background: #DDDDDD;
+  border-radius: 100%;
+  display: inline-block;
+  height: 12.8rem;
+  object-fit: cover;
+  overflow: hidden;
+  width: 12.8rem;
+}
+#connections .connection-list li {
+  text-align: center;
+}
+#connections .connection-list p {
+  font-weight: 700;
+}
+#connections .contact {
+  display: grid;
+  grid-area: user;
+  column-gap: 2.4rem;
+  grid-template-areas: "image heading" "image description";
+  grid-template-columns: 9.6rem auto;
+  grid-template-rows: auto 1fr;
+}
+#connections .contact .description {
+  grid-area: description;
+  font-size: var(--fz--description);
+  margin-top: 0.8rem;
+}
+#connections .contact .image {
+  border-radius: 100%;
+  grid-area: image;
+  height: 9.6rem;
+  overflow: hidden;
+  width: 9.6rem;
+}
+#connections .contact h2 {
+  grid-area: heading;
+}
+#connections .contact img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+#connections .pagination {
+  margin-top: 2.4rem;
+  padding-bottom: 2.4rem;
+}
+#connections .search-form {
+  align-self: center;
+  grid-area: search-form;
+}
+
+#alphabet {
+  grid-area: alphabet;
+}
+#alphabet .letter {
+  background: var(--i-alphabet--bg, var(--c--black));
+  color: white;
+  font-weight: 700;
+  height: calc(100vh / 26);
+  padding: 0;
+  width: 4.8rem;
+}
+#alphabet .letter.active, #alphabet .letter:focus, #alphabet .letter:hover {
+  --i-alphabet--bg: var(--c--link);
+}
+
+#nav {
+  display: grid;
+  gap: var(--gd--row-gap) var(--gd--column-gap);
+  grid-area: nav;
+  grid-template-areas: "alphabet search-form" "alphabet contacts" "alphabet pagination";
+  grid-template-columns: 4.8rem 1fr;
+  grid-template-rows: 8.4rem 1fr 6rem;
+  padding-right: 2.4rem;
+}
+#nav .contacts {
+  max-height: calc(100vh - 8.4rem - 6rem - 4.8rem);
+  grid-area: contacts;
+  overflow-y: auto;
+}
+#nav .contacts button {
+  height: 4.8rem;
+  overflow: hidden;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+#nav .contacts button:focus, #nav .contacts button:hover {
+  color: var(--c--red);
+}
+#nav .pagination {
+  grid-area: pagination;
+}
+#nav .search-form {
+  align-self: end;
+  grid-area: search-form;
+}
+
+/*!
+	ALFA v3.1.1
+	https://github.com/FAAREIA/ALFA
+	- - - - - - - - - - - - - - - -
+	Compiled with Dart Sass v1.26.5
+	Compilation ID: ua254i8
+	- - - - - - - - - - - - - - - -
+	CSS v0.0.0
+*/

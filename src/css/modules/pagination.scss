@@ -1,0 +1,24 @@
+.pagination {
+	display: flex;
+	justify-content: center;
+	.next,
+	.prev {
+		padding: 0 0.8rem;
+		width: auto;
+	}
+	button {
+		background: var(--c--black);
+		color: white;
+		height: 3.6rem;
+		width: 3.6rem;
+		&.active,
+		&:focus,
+		&:hover {
+			background: var(--c--red);
+		}
+		&[disabled] {
+			background: #AAAAAA;
+			pointer-events: none;
+		}
+	}
+}

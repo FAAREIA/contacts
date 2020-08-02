@@ -1,0 +1,52 @@
+#alphabet {
+	grid-area: alphabet;
+	.letter {
+		background: var(--i-alphabet--bg, var(--c--black));
+		color: white;
+		font-weight: 700;
+		height: calc(100vh / 26);
+		padding: 0;
+		width: 4.8rem;
+		&.active,
+		&:focus,
+		&:hover {
+			--i-alphabet--bg: var(--c--link);
+		}
+	}
+}
+
+#nav {
+	display: grid;
+	gap: var(--gd--row-gap) var(--gd--column-gap);
+	grid-area: nav;
+	grid-template-areas: "alphabet search-form"
+						 "alphabet contacts"
+						 "alphabet pagination";
+	grid-template-columns: 4.8rem 1fr;
+	grid-template-rows: 8.4rem 1fr 6rem;
+	padding-right: 2.4rem;
+	.contacts {
+		max-height: calc(100vh - 8.4rem - 6rem - 4.8rem);
+		grid-area: contacts;
+		overflow-y: auto;
+		button {
+			height: 4.8rem;
+			overflow: hidden;
+			text-align: left;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			width: 100%;
+			&:focus,
+			&:hover {
+				color: var(--c--red);
+			}
+		}
+	}
+	.pagination {
+		grid-area: pagination;
+	}
+	.search-form {
+		align-self: end;
+		grid-area: search-form;
+	}
+}
