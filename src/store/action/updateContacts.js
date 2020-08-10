@@ -1,8 +1,8 @@
-import {UPDATE_CONTACTS} from './types';
+import { UPDATE_CONTACTS } from './types';
 
-const updateContacts = contacts => ({
+const updateContacts = (contacts) => ({
 	contacts,
-	type: UPDATE_CONTACTS
+	type: UPDATE_CONTACTS,
 });
 
 export default updateContacts;

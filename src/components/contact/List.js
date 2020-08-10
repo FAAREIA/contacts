@@ -1,5 +1,5 @@
-import React, {useContext, useEffect, useReducer} from 'react';
-import {ContactsContext} from '../App';
+import React, { useContext, useEffect, useReducer } from 'react';
+import { ContactsContext } from '../App';
 import ConnectionList from '../connection/List';
 import Contact from './Contact';
 import ContactFilterLetter from './FilterLetter';
@@ -8,8 +8,6 @@ import Loading from '../loading';
 import reducer from '../../store/reducer/contactList';
 import Search from '../search';
 import updateContacts from '../../store/action/updateContacts';
-
-
 
 const ContactList = () => {
 	const [state, dispatch] = useReducer(reducer, initialState);
@@ -33,6 +31,6 @@ const ContactList = () => {
 			{isConnectionList}
 		</section>
 	);
-}
+};
 
 export default ContactList;

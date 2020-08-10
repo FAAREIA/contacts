@@ -1,13 +1,13 @@
-const cloneContacts = contacts => {
-	return contacts.map(contact => {
+const cloneContacts = (contacts) => (
+	contacts.map((contact) => {
 		const contactClone = {};
 
-		for(const [key, value] of Object.entries(contact)) {
+		Object.entries(contact).forEach(([key, value]) => {
 			contactClone[key] = (Array.isArray(value)) ? value.slice() : value;
-		}
+		});
 
 		return contactClone;
-	});
-}
+	})
+);
 
 export default cloneContacts;

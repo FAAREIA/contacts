@@ -1,9 +1,7 @@
 import React from 'react';
 
-
-
-const UserConnection = ({data}) => {
-	const {avatar, name} = data;
+const UserConnection = ({ data }) => {
+	const { avatar, name } = data;
 
 	return (
 		<>
@@ -11,6 +9,6 @@ const UserConnection = ({data}) => {
 			<p>{name}</p>
 		</>
 	);
-}
+};
 
 export default UserConnection;

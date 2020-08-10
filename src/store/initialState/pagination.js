@@ -2,7 +2,7 @@ const initialState = {
 	currentPage: 1,
 	itemsPerPage: undefined,
 	offset: 0,
-	totalPages: undefined
+	totalPages: undefined,
 };
 
 export default initialState;

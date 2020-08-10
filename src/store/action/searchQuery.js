@@ -1,8 +1,8 @@
-import {SEARCH_QUERY} from './types';
+import { SEARCH_QUERY } from './types';
 
-const searchQuery = query => ({
+const searchQuery = (query) => ({
 	query,
-	type: SEARCH_QUERY
+	type: SEARCH_QUERY,
 });
 
 export default searchQuery;

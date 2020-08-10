@@ -1,7 +1,7 @@
 const initialState = {
 	contacts: null,
 	error: undefined,
-	loading: true
+	loading: true,
 };
 
 export default initialState;

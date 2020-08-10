@@ -3,16 +3,14 @@ import searchQuery from '../../store/action/searchQuery';
 import useCleanWhitespaces from '../../hooks/useCleanWhitespaces';
 import useDelayInput from '../../hooks/useDelayInput';
 
-
-
-const Search = ({action = searchQuery, dispatch, placeholder}) => {
+const Search = ({ action = searchQuery, dispatch, placeholder }) => {
 	const cleanWhitespaces = useCleanWhitespaces;
 	const delayInput = useDelayInput;
 
-	const handleOnChange = e => {
+	const handleOnChange = (e) => {
 		const value = cleanWhitespaces(e.currentTarget.value);
 
-		return delayInput({action, dispatch, value});
+		return delayInput({ action, dispatch, value });
 	};
 
 	return (
@@ -20,6 +18,6 @@ const Search = ({action = searchQuery, dispatch, placeholder}) => {
 			<input className="form-control" name="search" onChange={handleOnChange} placeholder={placeholder} type="text" />
 		</form>
 	);
-}
+};
 
 export default Search;

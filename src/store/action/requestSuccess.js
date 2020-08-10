@@ -1,8 +1,8 @@
-import {REQUEST_SUCCESS} from './types';
+import { REQUEST_SUCCESS } from './types';
 
-const requestSuccess = payload => ({
+const requestSuccess = (payload) => ({
 	payload,
-	type: REQUEST_SUCCESS
+	type: REQUEST_SUCCESS,
 });
 
 export default requestSuccess;

@@ -1,8 +1,12 @@
 import React from 'react';
 
-
-
-const PaginationItem = ({currentPage, disabled = false, onClickAction, onClickArgs, text}) => {
+const PaginationItem = ({
+	currentPage,
+	disabled = false,
+	onClickAction,
+	onClickArgs,
+	text
+}) => {
 	let classes = null;
 
 	if (currentPage === text) classes = 'active';
@@ -13,6 +17,6 @@ const PaginationItem = ({currentPage, disabled = false, onClickAction, onClickAr
 			<button className={classes} disabled={disabled} onClick={() => onClickAction(onClickArgs)} type="button">{text}</button>
 		</li>
 	);
-}
+};
 
 export default PaginationItem;

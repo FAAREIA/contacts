@@ -1,4 +1,4 @@
-import React, {useEffect, useReducer, useRef} from 'react';
+import React, { useEffect, useReducer, useRef } from 'react';
 import Connection from './Connection';
 import initialState from '../../store/initialState/connectionList';
 import reducer from '../../store/reducer/connectionList';
@@ -6,9 +6,7 @@ import Search from '../search';
 import setConnections from '../../store/action/setConnections';
 import User from '../user';
 
-
-
-const ConnectionList = ({contacts, selectedContact}) => {
+const ConnectionList = ({ contacts, selectedContact }) => {
 	const [state, dispatch] = useReducer(reducer, initialState);
 
 	const connectionsId = selectedContact.connections;
@@ -28,7 +26,7 @@ const ConnectionList = ({contacts, selectedContact}) => {
 			</header>
 			{connection}
 		</article>
-	)
-}
+	);
+};
 
 export default ConnectionList;

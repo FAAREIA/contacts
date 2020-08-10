@@ -1,6 +1,6 @@
 const initialState = {
 	connections: null,
-	searchQuery: undefined
+	searchQuery: undefined,
 };
 
 export default initialState;
